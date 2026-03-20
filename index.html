@@ -9,9 +9,9 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --red: #5E0006;
-    --red-light: #8C1A20;
-    --red-dark: #3D0004;
+    --red: #62191C;
+    --red-light: #8C2A2E;
+    --red-dark: #4A1215;
     --beige: #F2E8D9;
     --beige-dark: #E5D5BC;
     --beige-mid: #D9C8AE;
@@ -48,6 +48,8 @@
     background: rgba(98,129,65,0.97);
   }
   nav.scrolled .logo, nav.scrolled .nav-links a { color: var(--beige); }
+  nav.scrolled .logo svg path { fill: #F2E8D9 !important; }
+  nav.scrolled .logo > span > span:last-child { color: rgba(242,232,217,0.6) !important; }
   nav.scrolled .nav-cta { background: var(--red); color: #fff; border-color: var(--red); }
 
   .logo {
@@ -94,7 +96,7 @@
   .hero-bg-texture {
     position: absolute; inset: 0;
     background-image:
-      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(94,0,6,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(98,25,28,0.18) 0%, transparent 70%),
       radial-gradient(ellipse 40% 40% at 10% 80%, rgba(242,232,217,0.06) 0%, transparent 60%);
   }
 
@@ -238,24 +240,6 @@
     font-size: 0.7rem; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--beige-mid);
     text-align: center;
-  }
-
-  .hero-stats {
-    position: absolute; bottom: 3rem; left: 0; right: 0;
-    padding: 0 4rem;
-    display: flex; gap: 3rem; justify-content: flex-start;
-    opacity: 0; animation: fadeUp 0.9s ease 1.2s forwards;
-  }
-  .stat { text-align: left; }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700;
-    color: var(--beige); line-height: 1;
-  }
-  .stat-num span { color: var(--red-light); }
-  .stat-label {
-    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(229,213,188,0.6); margin-top: 0.3rem;
   }
 
   /* scroll indicator */
@@ -712,7 +696,6 @@
     nav.scrolled { padding: 0.8rem 2rem; }
     .hero-content { grid-template-columns: 1fr; gap: 2rem; padding: 6rem 2rem 10rem; }
     .hero-right { display: none; }
-    .hero-stats { padding: 0 2rem; }
     #about, #services, #process, #why, #contact { padding: 6rem 2rem; }
     .about-grid, .why-grid { grid-template-columns: 1fr; gap: 3rem; }
     .services-header { grid-template-columns: 1fr; }
@@ -729,7 +712,13 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#hero" class="logo">Roots <span>&</span> Rise</a>
+  <a href="#hero" class="logo" style="display:flex;align-items:center;gap:0.6rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="44" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="7061ec83f7"><path d="M 52.199219 28.558594 L 322.949219 28.558594 L 322.949219 346.558594 L 52.199219 346.558594 Z M 52.199219 28.558594 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#7061ec83f7)"><path fill="#62191c" d="M 176.835938 307.65625 L 176.835938 251.753906 L 123.242188 198.164062 L 137.371094 184.035156 L 176.835938 223.5 L 176.835938 194.085938 C 160.667969 177.921875 144.570312 161.753906 128.40625 145.589844 L 141.921875 132.074219 L 176.835938 166.984375 L 176.835938 138.730469 L 156.050781 117.945312 L 170.179688 103.816406 L 187.636719 121.273438 L 205.089844 103.816406 L 219.21875 117.945312 L 198.433594 138.730469 L 198.433594 166.984375 L 233.347656 132.074219 L 246.863281 145.589844 C 230.699219 161.753906 214.601562 177.921875 198.433594 194.085938 L 198.433594 223.5 L 237.898438 184.035156 L 252.027344 198.164062 L 198.433594 251.753906 L 198.433594 335.910156 L 187.636719 346.710938 L 176.835938 335.910156 Z M 194.765625 35.621094 L 304.734375 145.589844 L 280.960938 169.363281 L 323.007812 211.40625 L 220.171875 314.246094 L 220.171875 285.988281 L 294.75 211.40625 L 252.707031 169.363281 L 276.480469 145.589844 L 187.703125 56.8125 L 98.925781 145.589844 L 122.699219 169.363281 L 80.65625 211.40625 L 155.167969 285.988281 L 155.167969 314.246094 L 52.332031 211.40625 L 94.375 169.363281 L 70.601562 145.589844 L 187.703125 28.558594 Z M 194.765625 35.621094 " fill-opacity="1" fill-rule="evenodd"/></g></svg>
+    <span style="display:flex;flex-direction:column;line-height:1.1;">
+      <span style="font-size:1.1rem;">Roots <span style="color:var(--red)">&</span> Rise</span>
+      <span style="font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);font-family:'DM Sans',sans-serif;font-weight:400;">Consulting Limited</span>
+    </span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -743,7 +732,11 @@
 <section id="hero">
   <div class="hero-bg-texture"></div>
   <div class="hero-grid-overlay"></div>
- 
+  <!-- Logo watermark backdrop -->
+  <div class="hero-logo-backdrop" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="logo-clip"><path d="M 52.199219 28.558594 L 322.949219 28.558594 L 322.949219 346.558594 L 52.199219 346.558594 Z M 52.199219 28.558594 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#logo-clip)"><path fill="#F2E8D9" d="M 176.835938 307.65625 L 176.835938 251.753906 L 123.242188 198.164062 L 137.371094 184.035156 L 176.835938 223.5 L 176.835938 194.085938 C 160.667969 177.921875 144.570312 161.753906 128.40625 145.589844 L 141.921875 132.074219 L 176.835938 166.984375 L 176.835938 138.730469 L 156.050781 117.945312 L 170.179688 103.816406 L 187.636719 121.273438 L 205.089844 103.816406 L 219.21875 117.945312 L 198.433594 138.730469 L 198.433594 166.984375 L 233.347656 132.074219 L 246.863281 145.589844 C 230.699219 161.753906 214.601562 177.921875 198.433594 194.085938 L 198.433594 223.5 L 237.898438 184.035156 L 252.027344 198.164062 L 198.433594 251.753906 L 198.433594 335.910156 L 187.636719 346.710938 L 176.835938 335.910156 Z M 194.765625 35.621094 L 304.734375 145.589844 L 280.960938 169.363281 L 323.007812 211.40625 L 220.171875 314.246094 L 220.171875 285.988281 L 294.75 211.40625 L 252.707031 169.363281 L 276.480469 145.589844 L 187.703125 56.8125 L 98.925781 145.589844 L 122.699219 169.363281 L 80.65625 211.40625 L 155.167969 285.988281 L 155.167969 314.246094 L 52.332031 211.40625 L 94.375 169.363281 L 70.601562 145.589844 L 187.703125 28.558594 Z M 194.765625 35.621094 " fill-opacity="1" fill-rule="evenodd"/></g></svg>
+  </div>
+
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-eyebrow">
@@ -762,22 +755,8 @@
         <a href="#services" class="btn-primary"><span>Explore Services</span></a>
         <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/rootsandriseconsulting-info/30min'});return false;" class="btn-outline">Book a Consultation</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">5<span>+</span></div>
-          <div class="stat-label">SMEs Supported</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Core Services</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100<span>%</span></div>
-          <div class="stat-label">Client Satisfaction</div>
-        </div>
-      </div>
     </div>
- 
+
     <div class="hero-right">
       <div class="hero-emblem">
         <div class="emblem-ring"><div class="dot"></div></div>
@@ -790,7 +769,6 @@
       </div>
     </div>
   </div>
- 
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -1000,7 +978,7 @@
     <h2 class="contact-title">Let's grow your<br>business <em>together</em></h2>
     <p class="contact-sub">Book a free 30-minute discovery call. No pressure, no pitch — just an honest conversation about where you want to go.</p>
     <div class="contact-actions">
-      <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rootsandriseconsulting-info/30min?primary_color=5e0006'}); return false;" class="btn-white">Book a Free Call</a>
+      <a href="/cdn-cgi/l/email-protection#5f363139301f2d30302b2c3e313b2d362c3a3c30312c2a332b363138713c3032" class="btn-white">Book a Free Call</a>
       <a href="/cdn-cgi/l/email-protection#6f060109002f1d00001b1c0e010b1d061c0a0c00011c1a031b060108410c0002" class="btn-white-outline">Send Us a Message</a>
     </div>
     <div class="contact-info">
@@ -1014,7 +992,13 @@
 
 <!-- FOOTER -->
 <footer>
-  <a href="#hero" class="footer-logo">Roots <span>&</span> Rise Consulting Limited</a>
+  <a href="#hero" class="footer-logo" style="display:flex;align-items:center;gap:0.6rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="44" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="7061ec83f7"><path d="M 52.199219 28.558594 L 322.949219 28.558594 L 322.949219 346.558594 L 52.199219 346.558594 Z M 52.199219 28.558594 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#7061ec83f7)"><path fill="#F2E8D9" d="M 176.835938 307.65625 L 176.835938 251.753906 L 123.242188 198.164062 L 137.371094 184.035156 L 176.835938 223.5 L 176.835938 194.085938 C 160.667969 177.921875 144.570312 161.753906 128.40625 145.589844 L 141.921875 132.074219 L 176.835938 166.984375 L 176.835938 138.730469 L 156.050781 117.945312 L 170.179688 103.816406 L 187.636719 121.273438 L 205.089844 103.816406 L 219.21875 117.945312 L 198.433594 138.730469 L 198.433594 166.984375 L 233.347656 132.074219 L 246.863281 145.589844 C 230.699219 161.753906 214.601562 177.921875 198.433594 194.085938 L 198.433594 223.5 L 237.898438 184.035156 L 252.027344 198.164062 L 198.433594 251.753906 L 198.433594 335.910156 L 187.636719 346.710938 L 176.835938 335.910156 Z M 194.765625 35.621094 L 304.734375 145.589844 L 280.960938 169.363281 L 323.007812 211.40625 L 220.171875 314.246094 L 220.171875 285.988281 L 294.75 211.40625 L 252.707031 169.363281 L 276.480469 145.589844 L 187.703125 56.8125 L 98.925781 145.589844 L 122.699219 169.363281 L 80.65625 211.40625 L 155.167969 285.988281 L 155.167969 314.246094 L 52.332031 211.40625 L 94.375 169.363281 L 70.601562 145.589844 L 187.703125 28.558594 Z M 194.765625 35.621094 " fill-opacity="1" fill-rule="evenodd"/></g></svg>
+    <span style="display:flex;flex-direction:column;line-height:1.1;">
+      <span>Roots <span style="color:var(--red-light)">&</span> Rise</span>
+      <span style="font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(242,232,217,0.5);font-family:'DM Sans',sans-serif;font-weight:400;">Consulting Limited</span>
+    </span>
+  </a>
   <p style="font-size:0.78rem;color:rgba(229,213,188,0.45);font-style:italic;font-family:'Cormorant Garamond',serif;letter-spacing:0.08em;">Where legacy begins.</p>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
@@ -1022,11 +1006,9 @@
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Roots & Rise Consulting Limited. All rights reserved.</p>
+  <p class="footer-copy">© 2025 Roots & Rise Consulting Limited. All rights reserved.</p>
 </footer>
 
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Nav scroll effect
   const navbar = document.getElementById('navbar');
